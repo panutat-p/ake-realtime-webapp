@@ -21,3 +21,7 @@ tasks:
   dev:
     cmds:
       - npx next dev --turbopack --port 4000
+
+  build:
+    cmds:
+      - npx next build
