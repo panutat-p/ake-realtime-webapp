@@ -1,7 +1,11 @@
-export default function AppAlert() {
+import * as React from 'react'
+import Alert from '@mui/material/Alert'
+import CheckIcon from '@mui/icons-material/Check'
+
+export default function SimpleAlert() {
   return (
-    <>
-      <div style={{ backgroundColor: 'greenyellow' }}>App Alert</div>
-    </>
+    <Alert icon={<CheckIcon fontSize="inherit" />} severity="success">
+      Here is a gentle confirmation that your action was successful.
+    </Alert>
   )
 }
