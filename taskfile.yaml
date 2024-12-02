@@ -1,0 +1,19 @@
+version: '3'
+
+tasks:
+  install:
+    cmds:
+      - npm i -g prettier
+      - npm i
+
+  drizzle:
+    cmds:
+      - bunx drizzle-kit pull --config db/drizzle.config.ts
+
+  lint:
+    cmds:
+      - prettier --write .
+
+  dev:
+    cmds:
+      - bun run cmd/main.ts
