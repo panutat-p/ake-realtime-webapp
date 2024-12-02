@@ -14,6 +14,10 @@ tasks:
     cmds:
       - prettier --write .
 
+  nextlint:
+    cmds:
+      - npx next lint
+
   dev:
     cmds:
-      - bun run cmd/main.ts
+      - npx next dev --turbopack --port 4000
