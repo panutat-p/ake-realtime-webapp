@@ -26,3 +26,23 @@ npm i @mui/material @emotion/react @emotion/styled --force
 ```sh
 npm install @mui/icons-material --force
 ```
+
+## Course
+
+- https://bit.ly/3OxFSUP
+- https://gitlab.com/codingthailand/realtime-next-socketio-app
+
+## MySQL
+
+```sql
+CREATE DATABASE `ake_realtime_webapp` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+```
+
+## Drizzle
+
+Next.js already has dotenv built-in.
+
+```sh
+npm i drizzle-orm mysql2 --force
+npm i -D drizzle-kit --force
+```

@@ -4,11 +4,11 @@ tasks:
   install:
     cmds:
       - npm i -g prettier
-      - npm i
+      - npm i --force
 
   drizzle:
     cmds:
-      - bunx drizzle-kit pull --config db/drizzle.config.ts
+      - npx drizzle-kit pull --config drizzle/config.ts
 
   lint:
     cmds:
