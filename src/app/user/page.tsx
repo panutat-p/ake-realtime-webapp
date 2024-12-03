@@ -17,7 +17,12 @@ export default async function UserPage() {
           <Typography variant="h5">Total: {userCount}</Typography>
         </Box>
         <Box mt={2} ml={3}>
-          {userCount > 0 && users.map((u) => <Typography key={u.id}>{u.fullName}</Typography>)}
+          {userCount > 0 &&
+            users.map((u) => (
+              <Typography key={u.id}>
+                {u.fullName} {u.email}
+              </Typography>
+            ))}
         </Box>
       </Container>
     </>
