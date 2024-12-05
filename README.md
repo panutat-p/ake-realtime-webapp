@@ -25,6 +25,7 @@ npm i -D --force tsx
 ```sh
 npm i --force socket.io
 npm i --force --save-optional bufferutil utf-8-validate
+npm i --force socket.io-client
 ```
 
 ## MUI
