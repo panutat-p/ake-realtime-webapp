@@ -21,17 +21,24 @@
     "@mui/x-tree-view": "^7.23.0",
     "@react-spring/web": "^9.7.5",
     "dayjs": "^1.11.13",
+    "dotenv": "^16.4.7",
     "drizzle-orm": "^0.37.0",
     "mysql2": "^3.11.5",
     "next": "15.0.3",
     "react": "19.0.0-rc-66855b96-20241106",
-    "react-dom": "19.0.0-rc-66855b96-20241106"
+    "react-dom": "19.0.0-rc-66855b96-20241106",
+    "socket.io": "^4.8.1"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "drizzle-kit": "^0.29.0",
+    "tsx": "^4.19.2",
     "typescript": "^5"
+  },
+  "optionalDependencies": {
+    "bufferutil": "^4.0.8",
+    "utf-8-validate": "^6.0.5"
   }
 }

@@ -11,21 +11,33 @@ https://github.com/panutat-p/ake-realtime-webapp
 npm install @mui/material-nextjs @emotion/cache --force
 ```
 
+### Customer server
+
+```sh
+npm i --force dotenv
+npm i -D --force tsx
+```
+
 ## Socket.io
 
 - https://socket.io/docs/v4
+
+```sh
+npm i --force socket.io
+npm i --force --save-optional bufferutil utf-8-validate
+```
 
 ## MUI
 
 - https://mui.com/material-ui/getting-started/installation
 
 ```sh
-npm i @mui/material @emotion/react @emotion/styled --force
-npm i @mui/icons-material --force
+npm i --force @mui/material @emotion/react @emotion/styled
+npm i --force @mui/icons-material
 ```
 
 ```sh
-npm install @mui/x-charts @mui/x-date-pickers @mui/x-data-grid @mui/x-tree-view dayjs @react-spring/web --force
+npm i --force @mui/x-charts @mui/x-date-pickers @mui/x-data-grid @mui/x-tree-view dayjs @react-spring/web
 ```
 
 ## Course
@@ -44,6 +56,6 @@ CREATE DATABASE `ake_realtime_webapp` CHARACTER SET utf8mb4 COLLATE utf8mb4_unic
 Next.js already has dotenv built-in.
 
 ```sh
-npm i drizzle-orm mysql2 --force
-npm i -D drizzle-kit --force
+npm i --force drizzle-orm mysql2
+npm i --force -D drizzle-kit
 ```
