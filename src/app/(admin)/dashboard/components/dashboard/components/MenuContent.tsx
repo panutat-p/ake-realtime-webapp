@@ -6,15 +6,13 @@ import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
 import Stack from '@mui/material/Stack'
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded'
-import AnalyticsRoundedIcon from '@mui/icons-material/AnalyticsRounded'
 import PeopleRoundedIcon from '@mui/icons-material/PeopleRounded'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 const mainListItems = [
   { text: 'Home', icon: <HomeRoundedIcon />, href: '/dashboard' },
-  { text: 'User', icon: <AnalyticsRoundedIcon />, href: '/user' },
-  { text: 'About', icon: <PeopleRoundedIcon />, href: '/about' },
+  { text: 'Contact', icon: <PeopleRoundedIcon />, href: '/dashboard/contact' },
 ]
 
 export default function MenuContent() {
