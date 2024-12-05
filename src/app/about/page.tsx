@@ -7,6 +7,7 @@ export default function AboutPage() {
   return (
     <>
       <Container maxWidth="lg">
+        <Typography variant="subtitle1">/about</Typography>
         <Typography variant="h2">About Page</Typography>
         <Alert icon={<CheckIcon fontSize="inherit" />} severity="info">
           Welcome

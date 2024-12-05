@@ -12,6 +12,7 @@ export default async function UserPage() {
   return (
     <>
       <Container maxWidth="lg">
+        <Typography variant="subtitle1">/user</Typography>
         <Typography variant="h2">User Page</Typography>
         <Box mt={6}>
           <Typography variant="h5">Total: {userCount}</Typography>

@@ -21,10 +21,11 @@ npm install @mui/material-nextjs @emotion/cache --force
 
 ```sh
 npm i @mui/material @emotion/react @emotion/styled --force
+npm i @mui/icons-material --force
 ```
 
 ```sh
-npm install @mui/icons-material --force
+npm install @mui/x-charts @mui/x-date-pickers @mui/x-data-grid @mui/x-tree-view dayjs @react-spring/web --force
 ```
 
 ## Course
