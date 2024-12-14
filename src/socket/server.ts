@@ -1,4 +1,4 @@
-import { Server } from 'socket.io'
+import { Server, Socket } from 'socket.io'
 
 let io: Server | undefined
 
@@ -10,15 +10,16 @@ const initSocketSingleton = () => {
       },
     })
 
-    // io.on('connection', (socket: Socket) => {
-    //     console.log(`Client connected: ${socket.id}`);
+    io.on('connection', (socket: Socket) => {
+      console.info(`🟢 Client connected: ${socket.id}`)
 
-    //     socket.emit('welcome', 'ยินดีต้อนรับสู่ Dashboard'); // ส่งไปยัง client
-
-    //     socket.on('disconnect', () => {
-    //         console.log(`Client disconnected: ${socket.id}`);
-    //     });
-    // });
+      setInterval(() => {
+        socket.emit('welcome', 'hello 🐵') // send data to client
+      }, 400)
+      socket.on('disconnect', () => {
+        console.info(`🟡 Client disconnected: ${socket.id}`)
+      })
+    })
   }
   return io!
 }

@@ -23,6 +23,7 @@ const StyledBreadcrumbs = styled(Breadcrumbs)(({ theme }: any) => ({
 export default function NavbarBreadcrumbs() {
   const socketClient = io('http://localhost:4001')
   const [isConnected, setIsConnected] = useState(false)
+  const [message, setMessage] = useState('')
 
   useEffect(() => {
     if (socketClient.connected) {
@@ -40,6 +41,11 @@ export default function NavbarBreadcrumbs() {
       setIsConnected(false)
     })
 
+    socketClient.on('welcome', (data: any) => {
+      console.info('🟡 socket client, welcome, data:', data)
+      setMessage(data)
+    })
+
     return () => {
       socketClient.off('connect', () => {
         setIsConnected(true)
@@ -47,6 +53,7 @@ export default function NavbarBreadcrumbs() {
       socketClient.off('disconnect', () => {
         setIsConnected(false)
       })
+      socketClient.off('welcome')
       socketClient.disconnect()
     }
   }, [])
@@ -55,10 +62,13 @@ export default function NavbarBreadcrumbs() {
   return (
     <StyledBreadcrumbs aria-label="breadcrumb" separator={<NavigateNextRoundedIcon fontSize="small" />}>
       {isConnected ? <Cloud color="success" fontSize="large" /> : <Cloud color="error" fontSize="large" />}
-      <Typography variant="h5">ยินดีต้อนรับ</Typography>
+      <Typography variant="body1" sx={{ color: 'text.primary', fontWeight: 600 }}>
+        home
+      </Typography>
       <Typography variant="body1" sx={{ color: 'text.primary', fontWeight: 600 }}>
         {pathname}
       </Typography>
+      <Typography variant="body1">{message}</Typography>
     </StyledBreadcrumbs>
   )
 }

@@ -1,7 +1,7 @@
 import { createServer } from 'node:http'
 import { parse } from 'node:url'
 import next from 'next'
-import io from '@/socket/client'
+import io from '@/socket/server'
 import dotenv from 'dotenv'
 
 dotenv.config()
