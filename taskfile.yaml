@@ -6,9 +6,13 @@ tasks:
       - npm i -g prettier
       - npm i --force
 
-  drizzle:
+  drizzle-pull:
     cmds:
       - npx drizzle-kit pull --config drizzle/config.ts
+
+  drizzle-push:
+    cmds:
+      - npx drizzle-kit push --config drizzle/config.ts
 
   lint:
     cmds:

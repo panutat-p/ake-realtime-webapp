@@ -1,27 +1,27 @@
 import Container from '@mui/material/Container'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
-import { user } from '@/db/schema'
 import db from '@/app/lib/mysql_connection'
 import { asc } from 'drizzle-orm'
+import { staff } from '@/db/schema'
 
 export default async function UserPage() {
-  const userCount = await db.$count(user)
-  const users = await db.select().from(user).orderBy(asc(user.fullName))
+  const staffCount = await db.$count(staff)
+  const staffs = await db.select().from(staff).orderBy(asc(staff.staffId))
 
   return (
     <>
       <Container maxWidth="lg">
         <Typography variant="subtitle1">/user</Typography>
-        <Typography variant="h2">User Page</Typography>
+        <Typography variant="h2">Staff Page</Typography>
         <Box mt={6}>
-          <Typography variant="h5">Total: {userCount}</Typography>
+          <Typography variant="h5">Total: {staffCount}</Typography>
         </Box>
         <Box mt={2} ml={3}>
-          {userCount > 0 &&
-            users.map((u) => (
-              <Typography key={u.id}>
-                {u.fullName} {u.email}
+          {staffCount > 0 &&
+            staffs.map((staff) => (
+              <Typography key={staff.staffId}>
+                {staff.firstName} {staff.lastName}
               </Typography>
             ))}
         </Box>
