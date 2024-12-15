@@ -22,7 +22,7 @@ import { fetcher } from '@/app/services/http'
 
 export default function MainGrid() {
   const [statsArray, setStatsArray] = useState<StatCardProps[]>([])
-  const { data, isLoading } = useSWR('/api/dashboard', fetcher)
+  const { data, isLoading } = useSWR('/api/dashboard', fetcher, { revalidateOnFocus: false })
 
   useEffect(() => {
     if (data) {
