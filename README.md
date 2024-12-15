@@ -8,7 +8,7 @@ https://github.com/panutat-p/ake-realtime-webapp
 - https://mui.com/material-ui/integrations/nextjs
 
 ```sh
-npm install @mui/material-nextjs @emotion/cache --force
+npm i --force @mui/material-nextjs @emotion/cache
 ```
 
 ### Customer server
@@ -59,4 +59,12 @@ Next.js already has dotenv built-in.
 ```sh
 npm i --force drizzle-orm mysql2
 npm i --force -D drizzle-kit
+```
+
+## SWR
+
+https://swr.vercel.app/docs/getting-started
+
+```shell
+npm i --force swr axios
 ```
