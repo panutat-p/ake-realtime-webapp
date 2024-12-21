@@ -19,10 +19,23 @@ import PageViewsBarChart from './PageViewsBarChart'
 import SessionsChart from './SessionsChart'
 import StatCard, { StatCardProps } from './StatCard'
 import { fetcher } from '@/app/services/http'
+import io from 'socket.io-client'
 
 export default function MainGrid() {
-  const [statsArray, setStatsArray] = useState<StatCardProps[]>([])
+  const socketClient = io('http://localhost:4001')
+
   const { data, isLoading } = useSWR('/api/dashboard', fetcher, { revalidateOnFocus: false })
+  const [statsArray, setStatsArray] = useState<StatCardProps[]>([])
+
+  useEffect(() => {
+    socketClient.on('update_dashboard', () => {
+      console.info('socket event: update_dashboard')
+    })
+
+    return () => {
+      socketClient.off('update_dashboard')
+    }
+  }, [])
 
   useEffect(() => {
     if (data) {
