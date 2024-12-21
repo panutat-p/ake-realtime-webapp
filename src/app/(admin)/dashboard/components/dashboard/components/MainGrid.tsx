@@ -20,7 +20,7 @@ import SessionsChart from './SessionsChart'
 import StatCard, { StatCardProps } from './StatCard'
 import { fetcher } from '@/app/services/http'
 import io from 'socket.io-client'
-import type { UpdateDashboardEvent } from '@/app/api/dashboard/customer/route'
+import type { UpdateDashboardEvent } from '@/app/api/types/dashboard'
 
 export default function MainGrid() {
   const socketClient = io('http://localhost:4001')
@@ -113,11 +113,11 @@ export default function MainGrid() {
         <Grid size={{ xs: 12, sm: 6, lg: 3 }}>
           <HighlightedCard />
         </Grid>
-        <Grid size={{ xs: 12, md: 6 }}>
-          <SessionsChart />
-        </Grid>
-        <Grid size={{ xs: 12, md: 6 }}>
+        <Grid size={{ xs: 12, md: 12 }}>
           <PageViewsBarChart />
+        </Grid>
+        <Grid size={{ xs: 12, md: 12 }}>
+          <SessionsChart />
         </Grid>
       </Grid>
       <Typography component="h2" variant="h6" sx={{ mb: 2 }}>

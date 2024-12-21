@@ -10,12 +10,19 @@ const initSocketSingleton = () => {
       },
     })
 
-    io.on('connection', (socket: Socket) => {
+    io.on('connection', async (socket: Socket) => {
       console.info(`🟢 Client connected: ${socket.id}`)
 
+      let count = 0
       setInterval(() => {
-        socket.emit('welcome', 'hello 🐵') // send data to client
-      }, 400)
+        count++
+        socket.emit('welcome', `hello ${count}`) // send data to client
+      }, 2000)
+
+      socket.on("ping", (count) => {
+        console.log(count);
+      });
+
       socket.on('disconnect', () => {
         console.info(`🟡 Client disconnected: ${socket.id}`)
       })

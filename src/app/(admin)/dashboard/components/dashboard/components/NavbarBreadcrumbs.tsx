@@ -41,8 +41,7 @@ export default function NavbarBreadcrumbs() {
       setIsConnected(false)
     })
 
-    socketClient.on('welcome', (data: any) => {
-      console.info('🟡 socket client, welcome, data:', data)
+    socketClient.on('welcome', (data: string) => {
       setMessage(data)
     })
 
