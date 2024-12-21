@@ -20,6 +20,7 @@ import SessionsChart from './SessionsChart'
 import StatCard, { StatCardProps } from './StatCard'
 import { fetcher } from '@/app/services/http'
 import io from 'socket.io-client'
+import type { UpdateDashboardEvent } from '@/app/api/dashboard/customer/route'
 
 export default function MainGrid() {
   const socketClient = io('http://localhost:4001')
@@ -28,8 +29,31 @@ export default function MainGrid() {
   const [statsArray, setStatsArray] = useState<StatCardProps[]>([])
 
   useEffect(() => {
-    socketClient.on('update_dashboard', () => {
-      console.info('socket event: update_dashboard')
+    socketClient.on('update_dashboard', (data: UpdateDashboardEvent) => {
+      console.info('socket event: update_dashboard:', data.data)
+      setStatsArray((prev: StatCardProps[]) => {
+        return prev.map((item) => {
+          switch (item.title) {
+            case 'Total Customers':
+              return {
+                ...item,
+                value: data.data.countCustomer.toString() || 'Loading...',
+              }
+            case 'Total Staff':
+              return {
+                ...item,
+                value: data.data.countFilm.toString() || 'Loading...',
+              }
+            case 'Total Films':
+              return {
+                ...item,
+                value: data.data.countStaff.toString() || 'Loading...',
+              }
+            default:
+              return item
+          }
+        })
+      })
     })
 
     return () => {

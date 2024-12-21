@@ -5,6 +5,14 @@ import { countCustomer, countFilm, countStaff } from '@/app/services/dashboard'
 import io from '@/socket/server'
 import { formatDateToMySQL } from '@/app/lib/date_util'
 
+export type UpdateDashboardEvent = {
+  data: {
+    countCustomer: number
+    countStaff: number
+    countFilm: number
+  }
+}
+
 // POST /api/dashboard/customer
 export async function POST() {
   await db.insert(customer).values({
