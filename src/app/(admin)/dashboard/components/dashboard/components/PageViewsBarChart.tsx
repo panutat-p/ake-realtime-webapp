@@ -9,11 +9,8 @@ import { useTheme } from '@mui/material/styles'
 import useSWR from 'swr'
 import { fetcher } from '@/app/services/http'
 import type { SaleChart } from '@/app/api/types/chart'
-import io from 'socket.io-client'
 
 export default function PageViewsBarChart() {
-  const socketClient = io('http://localhost:4001')
-
   const { data: payload } = useSWR('/api/dashboard/chart', fetcher, {
     revalidateOnFocus: false,
   })
