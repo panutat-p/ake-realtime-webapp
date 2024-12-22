@@ -2,6 +2,10 @@
 
 https://github.com/panutat-p/ake-realtime-webapp
 
+Course resources
+- https://bit.ly/3OxFSUP
+- https://gitlab.com/codingthailand/realtime-next-socketio-app
+
 ## Next.js
 
 - https://nextjs.org/docs/app/getting-started
@@ -40,11 +44,6 @@ npm i --force @mui/icons-material
 ```sh
 npm i --force @mui/x-charts @mui/x-date-pickers @mui/x-data-grid @mui/x-tree-view dayjs @react-spring/web
 ```
-
-## Course
-
-- https://bit.ly/3OxFSUP
-- https://gitlab.com/codingthailand/realtime-next-socketio-app
 
 ## MySQL
 
