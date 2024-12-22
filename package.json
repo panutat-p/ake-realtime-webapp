@@ -2,6 +2,7 @@
   "name": "ake-realtime-webapp",
   "version": "0.1.0",
   "private": true,
+  "exports": "./dist/server.js",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
@@ -37,6 +38,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "drizzle-kit": "^0.29.0",
+    "pkgroll": "^2.5.1",
     "tsx": "^4.19.2",
     "typescript": "^5"
   },

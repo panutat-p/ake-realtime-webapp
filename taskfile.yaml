@@ -24,9 +24,10 @@ tasks:
 
   dev:
     cmds:
-      #      - npx next dev --turbopack --port 4000
+      #- npx next dev --turbopack --port 4000
       - npx tsx ./src/index.ts
 
   build:
     cmds:
       - npx next build
+      - npx pkgroll --tsconfig tsconfig.server.json

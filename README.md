@@ -68,3 +68,11 @@ https://swr.vercel.app/docs/getting-started
 ```shell
 npm i --force swr axios
 ```
+
+## pkgroll
+
+```sh
+npm i -D --force pkgroll
+```
+
+https://github.com/privatenumber/pkgroll
