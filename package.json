@@ -49,5 +49,10 @@
     "@types/react": "19.0.2",
     "@types/react-dom": "19.0.2"
   },
-  "exports": "./dist/server.js"
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": "./dist/index.js"
+  }
 }

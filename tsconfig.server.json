@@ -8,5 +8,5 @@
     "isolatedModules": false,
     "noEmit": false
   },
-  "include": ["src/socket/server.ts", "src/index.ts"]
+  "include": ["src/index.ts", "src/socket/server.ts"]
 }

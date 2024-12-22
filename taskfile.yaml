@@ -29,5 +29,5 @@ tasks:
 
   build:
     cmds:
-      - npx next build
-      - npx pkgroll --tsconfig tsconfig.server.json
+      - npx next build && npx pkgroll --tsconfig=tsconfig.server.json
+      - npx pkgroll --tsconfig=tsconfig.server.json
